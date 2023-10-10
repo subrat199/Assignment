@@ -96,7 +96,7 @@ export default function Navbar() {
             display={{ base: "none", md: "inline-flex" }}
             fontSize={"sm"}
             fontWeight={600}
-            color={"white"}
+            color={isAuth ? "black" : "white"}
             bg={"pink.400"}
             href={"/signup"}
             _hover={{
