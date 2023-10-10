@@ -25,6 +25,12 @@ import {
 import JobDetails from "../Pages/JobDetails";
 export default function Navbar() {
   const { isOpen, onToggle } = useDisclosure();
+  const isAuth=localStorage.getItem("isLoggedIn")
+  const handleClick=()=>{
+    if(isAuth){
+      localStorage.clear()
+    }
+  }
   return (
     <Box>
       <Flex
@@ -57,9 +63,10 @@ export default function Navbar() {
             textAlign={useBreakpointValue({ base: "center", md: "left" })}
             fontFamily={"heading"}
             color={useColorModeValue("gray.800", "white")}
-            
+            fontWeight={'bold'}
+            fontFamily={'heading'}
           >
-            Logo
+            JOBS
           </Text>
 
           <Flex display={{ base: "none", md: "flex" }} ml={10}>
@@ -95,8 +102,9 @@ export default function Navbar() {
             _hover={{
               bg: "pink.300",
             }}
+            onClick={handleClick}
           >
-            Sign Up
+           {isAuth?"Logout": "Sign Up"}
           </Button>
         </Stack>
       </Flex>
