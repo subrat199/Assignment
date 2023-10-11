@@ -28,7 +28,7 @@ export default function Signup() {
 const navigate=useNavigate()
   const handleSignup = () => {
     const user = { firstName, lastName, email, password };
-    localStorage.setItem("user", JSON.stringify(user));
+    localStorage.setItem("user", JSON.stringify(user)||[]);
     navigate('/signin')
   };
 
