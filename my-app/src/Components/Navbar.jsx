@@ -1,5 +1,4 @@
 
-
 import {
   Box,
   Flex,
@@ -25,7 +24,7 @@ import {
 import JobDetails from "../Pages/JobDetails";
 export default function Navbar() {
   const { isOpen, onToggle } = useDisclosure();
-  const isAuth=localStorage.getItem("isLoggedIn")
+  const isAuth=localStorage.getItem('isLoggedIn');
   const handleClick=()=>{
     if(isAuth){
       localStorage.clear()
@@ -96,15 +95,15 @@ export default function Navbar() {
             display={{ base: "none", md: "inline-flex" }}
             fontSize={"sm"}
             fontWeight={600}
-            color={isAuth ? "black" : "white"}
+            color={"white"}
             bg={"pink.400"}
             href={"/signup"}
             _hover={{
               bg: "pink.300",
             }}
-            onClick={handleClick}
+         onClick={handleClick}
           >
-           {isAuth?"Logout": "Sign Up"}
+           {isAuth?"Logout":"Signup"}
           </Button>
         </Stack>
       </Flex>
